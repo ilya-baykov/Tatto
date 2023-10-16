@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<ul>
+    {% for post in data_db %}
+    <li>
+        <h2>{{post.content}}</h2>
+        <a href="{% url post.url_name %}">{{post.url_name}}</a>
+        {% if not forloop.last%}
+        <hr>
+        {% endif %}
+    </li>
+
+    {% endfor %}
+
+</ul>
+</body>
+</html>
