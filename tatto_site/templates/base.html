@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>title</title>
+    {% endblock %}
+    <link type="text/css" href="{% static 'tatto/css/style.css' %}" rel="stylesheet"/>
+
+
+</head>
+<body>
+<ul class="menu">
+    {% for key,value in data_db.items %}
+    <li>
+        <a href="{% url key%}">{{value.title}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% block content %} {% endblock %}
+</body>
+</html>
+
+
